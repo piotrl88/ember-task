@@ -13,10 +13,114 @@
         <link rel="stylesheet" href="css/main.css">
 
     </head>
+        <style type="text/css">
+            .content {
+                width: 970px;
+                height: 540px;
+                margin: 0px auto;
+                padding: 0px;
+                text-align: center;
+                background-color: #f6f6f6;
+            }
+            .content .section-title {
+                width: 500px;
+                height: 40px;
+                margin: 0px;
+                padding: 20px;
+                text-align: left;;
+            }
+            .content .section-title h2,h3 {
+                display: block;
+                margin: 0px;
+                padding: 0px;
+            }
+            .content .ex-item {
+                width: 220px;
+                height: 200px;
+                margin: 0px 20px 0px 20px;
+                padding: 0px;
+                float: left;
+            }
+            .content .ex-item img {
+                width: 200px;
+                height: 120px;
+                margin: 0px auto;
+                padding: 0px;
+            }
+            .content .hint {
+                clear: both;
+            }
+
+            .content .hint .hint-content {
+                width: 650px;
+                height: 40px;
+                float: left;
+                margin: 0px 0px 0px 150px;
+                padding: 0px;
+                text-align: center;
+                border: 1px solid #bbbbbb;
+                background-color: rgba(255,255,255, 0.6);
+            }
+            .content .hint .hint-content p {
+                display: block;
+                width: 60px;
+                height: 40px;
+                float: left;
+            }
+            .content .hint .check {
+                float: left;
+                cursor: pointer;
+            }
+            h2 {
+                font-family: Verdana;
+                font-size: 24px;
+                font-weight: bold;
+                font-style: normal;
+                text-decoration: none;
+                color: #4654AB;
+            }
+            h3 {
+                font-family: Verdana;
+                font-size: 18px;
+                font-weight: bold;
+                font-style: normal;
+                text-decoration: none;
+                color: #333333;
+            }
+            form {
+                width: 780px;
+                margin: 0px auto;
+                padding: 0px;
+            }
+
+            input {
+                padding: 4px;
+                margin: 4px;
+                width: 100px;
+            }
+
+            .validation .valid {
+                border: 5px solid green;
+            }
+
+            .validation .invalid {
+                border: 5px solid red;
+            }
+            .nav {
+                width: 970px;
+                margin: 0px auto;
+                padding: 0px;
+                text-align: center;
+                background-image: url('img/layout/u87_normal.png');
+                background-repeat: no-repeat;
+            }
+        </style>
+
     <body>
 
         <script type="text/x-handlebars">
-        <div>
+        <div class="content">{{outlet}}</div>
+        <div class="nav">
         <nav>
             <ul class="nav nav-justified">
                 <li>{{#link-to 'index.ex1'}}Ex1{{/link-to}}</li>
@@ -24,25 +128,61 @@
             </ul>
         </nav>
         </div>
-        {{outlet}}
         </script>
 
         <script type="text/x-handlebars" data-template-name="index/ex1">
-        EX1:
+        <div class="section-title">
+            <h2>Exercise 3 Vocabulary</h2>
+            <h3>Label the weather symbols.</h3>
+        </div>
+        <form>
         {{#each}}
-            <p>{{pict}}</p>
-            {{view App.TestField nameBinding=answer valueBinding="name" }}<br />
+            <div class="ex-item">
+                <img src={{unbound pict}} alt="icon" />
+                {{view App.TestField valueBinding="name" classBinding="isValid:valid:invalid" }}
+            </div>
         {{/each}}
-        <button {{action 'checkAnswers' this}}>Check</button>
+        </form>
+
+        <div class="hint">
+            <div class="hint-content">
+            {{#each}}
+                {{answer}}
+            {{/each}}
+            </div>
+            <a href="#" {{action 'checkAnswers' this}}><img src="img/layout/u13_normal.png" /></a>
+        </div>
+
         </script>
 
         <script type="text/x-handlebars" data-template-name="index/ex2">
-        EX2:
+        <div class="section-title">
+            <h2>Exercise 3 Vocabulary</h2>
+            <h3>Label the weather symbols.</h3>
+        </div>
+        <form>
+        {{#each}}
+            <div class="ex-item">
+                <img src={{unbound pict}} alt="icon" />
+            </div>
+        {{/each}}
+        </form>
+
+        <div class="hint">
+            <div class="hint-content">
+            {{#each}}
+                {{view App.TestField valueBinding="name" classBinding="isValid:valid:invalid" }}
+                {{desc}}
+            {{/each}}
+            </div>
+            <a href="#" {{action 'checkAnswers' this}}><img src="img/layout/u13_normal.png" /></a>
+        </div>
         </script>
 
 
         <script src="js/vendor/jquery-2.0.3.min.js"></script>
         <script src="js/vendor/handlebars-1.0.0.js"></script>
+        <!--<script src="http://builds.emberjs.com/tags/v1.1.2/ember.min.js"></script>-->
         <script src="js/vendor/ember-1.0.0.js"></script>
         <script src="js/vendor/ember-data.js"></script>
         <script src="js/plugins.js"></script>
