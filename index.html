@@ -31,9 +31,9 @@
         EX1:
         {{#each}}
             <p>{{pict}}</p>
-            {{input type="text" class="form-control" placeholder="translate" value=answers.name}}<br />
-        {{/each}}
 
+            {{view App.TestField name=answer valueBinding="name" }}<br />
+        {{/each}}
         <button {{action 'checkAnswers' this}}>Check</button>
         </script>
 

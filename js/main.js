@@ -1,10 +1,18 @@
-App = Em.Application.create({
+var App = Em.Application.create({
     LOG_TRANSITIONS: true,
     LOG_BINDINGS: true,
     LOG_VIEW_LOOKUPS: true,
     LOG_STACKTRACE_ON_DEPRECATION: true,
     LOG_VERSION: true,
-    LOG_ACTIVE_GENERATION: true
+    LOG_ACTIVE_GENERATION: true,
+    TestField:  Ember.TextField.extend({
+        attributeBindings: ['name', "value"],
+        isValid: function() {
+            console.log(this.get('value') + "|" + this.get("name"));
+            return ($.trim(this.get('value')).toLowerCase() === $.trim(this.get("data-answer")).toLowerCase());
+        }.property('value'),
+        classNameBindings: 'isValid:valid:invalid'
+    })
 });
 
 App.Router.map(function () {
@@ -52,37 +60,37 @@ App.Ex2 = DS.Model.extend({
 App.Ex1.FIXTURES = [
     {
         id: 1,
-        name : "an1",
+        name : "",
         pict: "foggy.jpg",
         answer: "foggy"
     },
     {
         id: 2,
-        name : "an2",
+        name : "",
         pict: "raining.jpg",
         answer: "raining"
     },
     {
         id: 3,
-        name : "an3",
+        name : "",
         pict: "cloudy.jpg",
         answer: "cloudy"
     },
     {
         id: 4,
-        name : "an4",
+        name : "",
         pict: "sunny.jpg",
         answer: "sunny"
     },
     {
         id: 5,
-        name : "an5",
+        name : "",
         pict: "windy.jpg",
         answer: "windy"
     },
     {
         id: 6,
-        name : "an6",
+        name : "",
         pict: "snowing.jpg",
         answer: "snowing"
     }
@@ -129,22 +137,19 @@ App.IndexRoute = Ember.Route.extend({
 
 App.IndexEx1Controller = Ember.ArrayController.extend({
     needs: "index",
-    answers : {
-        name1 : "",
-        name2 : "",
-        name3 : "",
-        name4 : "",
-        name5 : "",
-        name6 : ""
-    },
-    checkAnswers : function(model) {
-        var store = App.get('store.ex1');
-        var answers = this.get('answers');
-        var ans = answers.name;
-        console.log("#"+ans);
+    actions : {
+        checkAnswers : function(model) {
+            console.log(this.store.find('ex1'));
+            console.log("value: "+model.get('content')[0].get('name'));
+            console.log("answer: "+model.get('content')[0].get('answer'));
 
+             /*var store = App.get('store.ex1');
+             var answers = this.get('answers');
+             var ans = answers.name;
+             console.log("#"+ans);*/
+
+        }
     }
-
 });
 
 App.IndexEx1Route = Ember.Route.extend({
