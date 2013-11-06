@@ -31,8 +31,7 @@
         EX1:
         {{#each}}
             <p>{{pict}}</p>
-
-            {{view App.TestField name=answer valueBinding="name" }}<br />
+            {{view App.TestField nameBinding=answer valueBinding="name" }}<br />
         {{/each}}
         <button {{action 'checkAnswers' this}}>Check</button>
         </script>
