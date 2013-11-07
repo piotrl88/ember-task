@@ -18,6 +18,7 @@ App.Ex2 = DS.Model.extend({
     name : DS.attr("string"),
     pict: DS.attr("string"),
     isValid: DS.attr(),
+    type : DS.attr("string"),
     answer: DS.attr("string"),
     desc : DS.attr("string")
 });
@@ -73,61 +74,7 @@ App.Ex1.FIXTURES = [
         isValid : null,
         type : "ex1",
         answer: "snowing"
-    }/*,
-    {
-        id: 7,
-        name : "0",
-        pict: "img/exercise2/1.png",
-        answer: "1",
-        isValid : null,
-        type : "ex2",
-        desc : "doing a project"
-    },
-    {
-        id: 8,
-        name : "2",
-        pict: "img/exercise2/2.png",
-        answer: "2",
-        isValid : null,
-        type : "ex2",
-        desc : "enjoying a field trip"
-    },
-    {
-        id: 9,
-        name : "3",
-        pict: "img/exercise2/3.png",
-        answer: "3",
-        isValid : null,
-        type : "ex2",
-        desc : "working on computers"
-    },
-    {
-        id: 10,
-        name : "4",
-        pict: "img/exercise2/4.png",
-        answer: "4",
-        type : "ex2",
-        isValid : null,
-        desc : "taking a test"
-    },
-    {
-        id: 11,
-        name : "5",
-        pict: "img/exercise2/5.png",
-        answer: "5",
-        type : "ex2",
-        isValid : null,
-        desc : "giving a presentation"
-    },
-    {
-        id: 12,
-        name : "6",
-        pict: "img/exercise2/6.png",
-        answer: "6",
-        type : "ex2",
-        isValid : null,
-        desc : "practicing yoga"
-    }*/
+    }
 ];
 
 App.Ex2.FIXTURES = [
@@ -136,6 +83,7 @@ App.Ex2.FIXTURES = [
         name : "0",
         pict: "img/exercise2/1.png",
         answer: "1",
+        type : "ex2",
         isValid : null,
         desc : "doing a project"
     },
@@ -144,6 +92,7 @@ App.Ex2.FIXTURES = [
         name : "2",
         pict: "img/exercise2/2.png",
         answer: "2",
+        type : "ex2",
         isValid : null,
         desc : "enjoying a field trip"
     },
@@ -152,6 +101,7 @@ App.Ex2.FIXTURES = [
         name : "3",
         pict: "img/exercise2/3.png",
         answer: "3",
+        type : "ex2",
         isValid : null,
         desc : "working on computers"
     },
@@ -160,6 +110,7 @@ App.Ex2.FIXTURES = [
         name : "4",
         pict: "img/exercise2/4.png",
         answer: "4",
+        type : "ex2",
         isValid : null,
         desc : "taking a test"
     },
@@ -168,6 +119,7 @@ App.Ex2.FIXTURES = [
         name : "5",
         pict: "img/exercise2/5.png",
         answer: "5",
+        type : "ex2",
         isValid : null,
         desc : "giving a presentation"
     },
@@ -176,6 +128,7 @@ App.Ex2.FIXTURES = [
         name : "6",
         pict: "img/exercise2/6.png",
         answer: "6",
+        type : "ex2",
         isValid : null,
         desc : "practicing yoga"
     }

@@ -20,16 +20,3 @@ App.Router.map(function () {
         this.route('ex2');
     });
 });
-
-
-//set up simple helper for change box class (rotation)
-Ember.Handlebars.registerBoundHelper("imgOddEven", function (id) {
-    "use strict";
-    var imgClass;
-    if (id % 2 === 0) {
-        imgClass = "imgOdd";
-    } else {
-        imgClass = "imgEven";
-    }
-    return imgClass;
-});

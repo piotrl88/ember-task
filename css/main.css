@@ -348,13 +348,13 @@ textarea {
     border: 5px solid #ffffff;
     box-shadow: 2px 2px 4px #191919;
 }
-.content .ex-item.ex2.imgOdd {
+.content .ex-item.ex2:nth-child(even) {
     transform:rotate(5deg);
     -webkit-transform:rotate(5deg);
     -moz-transform:rotate(5deg);
     -o-transform:rotate(5deg);
 }
-.content .ex-item.ex2.imgEven {
+.content .ex-item.ex2:nth-child(odd) {
     transform:rotate(-5deg);
     -webkit-transform:rotate(-5deg);
     -moz-transform:rotate(-5deg);
