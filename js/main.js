@@ -1,5 +1,6 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert, Ember*/
+
 //set up emberjs application with logs
 var App = Ember.Application.create({
     LOG_TRANSITIONS: true,
@@ -21,17 +22,14 @@ App.Router.map(function () {
 });
 
 
-/*Ember.Handlebars.registerBoundHelper("hints", function(model) {
-    var theArray = model.get('content').content;
-    var len = theArray.length;
-    var i = len;
-    while (i--) {
-        var p = parseInt(Math.random()*len);
-        var t = theArray[i];
-        console.log(theArray[i].get('answer'));
-        theArray[i] = theArray[p];
-        theArray[p] = t;
+//set up simple helper for change box class (rotation)
+Ember.Handlebars.registerBoundHelper("imgOddEven", function (id) {
+    "use strict";
+    var imgClass;
+    if (id % 2 === 0) {
+        imgClass = "imgOdd";
+    } else {
+        imgClass = "imgEven";
     }
-});*/
-
-
+    return imgClass;
+});

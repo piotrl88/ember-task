@@ -331,10 +331,6 @@ textarea {
     margin: 5px;
     padding: 0px;
     float: left;
-    transform:rotate(5deg);
-    -webkit-transform:rotate(5deg);
-    -moz-transform:rotate(5deg);
-    -o-transform:rotate(5deg);
 }
 .content .ex-item.ex2 span {
     display: block;
@@ -352,13 +348,38 @@ textarea {
     border: 5px solid #ffffff;
     box-shadow: 2px 2px 4px #191919;
 }
-
+.content .ex-item.ex2.imgOdd {
+    transform:rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+    -o-transform:rotate(5deg);
+}
+.content .ex-item.ex2.imgEven {
+    transform:rotate(-5deg);
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+}
 .content .ex-item {
     width: 220px;
     height: 200px;
     margin: 0px 20px 0px 20px;
     padding: 0px;
     float: left;
+}
+.content .ex-item p {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+    padding: 0px;
+
+    position: relative;
+    top: 145px;
+    left: 30px;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 .content .ex-item img {
     width: 200px;
@@ -388,8 +409,6 @@ textarea {
     margin: 60px 0px 20px 100px;
     padding: 0px;
     text-align: center;
-    border: 1px solid #bbbbbb;
-    background-color: rgba(255,255,255, 0.6);
 }
 .content .hint .hint-content.ex2 div {
     width: 250px;
@@ -397,7 +416,7 @@ textarea {
     float: left;
 }
 .content .hint .hint-content.ex2 input {
-    width: 60px;
+    width: 40px;
     float: left;
 }
 .content .hint .hint-content.ex2 p {
@@ -410,15 +429,15 @@ textarea {
     float: left;
 }
 
-.content .hint .hint-content {
+.content .hint .hint-content.ex1 {
     width: 650px;
     height: 40px;
     float: left;
     margin: 0px 0px 0px 150px;
     padding: 0px;
     text-align: center;
-    border: 1px solid #bbbbbb;
-    background-color: rgba(255,255,255, 0.6);
+    border: 1px solid #CDD9E1;
+    background-color: rgba(230, 234, 238, 0.6);
 }
 .content .hint .hint-content p {
     display: block;
@@ -456,6 +475,9 @@ input {
     padding: 4px;
     margin: 4px;
     width: 100px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 .validation .valid {

@@ -7,6 +7,10 @@ App.IndexRoute = Ember.Route.extend({
     model: function () {
         "use strict";
         return this.store.find('ex1');
+    },
+    redirect: function () {
+        "use strict";
+        this.transitionTo('index.ex1');
     }
 });
 

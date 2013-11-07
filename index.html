@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +30,7 @@
         <form>
         {{#each}}
             <div class="ex-item">
+                <p>{{id}}</p>
                 <img src={{unbound pict}} alt="icon" />
                 {{view App.TestField valueBinding="name" classBinding="isValid:valid:invalid" }}
             </div>
@@ -40,7 +38,7 @@
         </form>
 
         <div class="hint">
-            <div class="hint-content">
+            <div class="hint-content ex1">
             {{#each}}
                 {{answer}}
             {{/each}}
@@ -57,7 +55,7 @@
         </div>
         <form>
         {{#each}}
-            <div class="ex-item ex2">
+            <div class="ex-item ex2 {{unbound imgOddEven id}}" >
                 <span>{{id}}</span>
                 <img src={{unbound pict}} alt="icon" />
             </div>
