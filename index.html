@@ -6,7 +6,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="deploy/css/main.css">
     </head>
     <body>
 
@@ -64,25 +64,28 @@
 
         <div class="hint">
             <div class="hint-content ex2">
+            <form>
             {{#each}}
                 <div>
                 {{view App.TestField valueBinding="name" classBinding="isValid:valid:invalid" }}
                 <p>{{desc}}</p>
                 </div>
             {{/each}}
+            </form>
             </div>
         </div>
         <a href="#" class="btn ex2" {{action 'checkAnswers' this}}><img src="img/layout/u13_normal.png" /></a>
         </script>
 
+        <script src="deploy/js/main.js"></script>
 
-        <script src="js/vendor/jquery-2.0.3.min.js"></script>
+<!--        <script src="js/vendor/jquery-2.0.3.min.js"></script>
         <script src="js/vendor/handlebars-1.0.0.js"></script>
         <script src="js/vendor/ember-1.0.0.js"></script>
         <script src="js/vendor/ember-data.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/controllers.js"></script>
         <script src="js/routes/routes.js"></script>
-        <script src="js/models/models.js"></script>
+        <script src="js/models/models.js"></script>-->
     </body>
 </html>

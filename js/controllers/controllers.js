@@ -28,7 +28,7 @@ App.IndexEx1Controller = Ember.ArrayController.extend({
     actions : {
         checkAnswers : function (model) {
             "use strict";
-            $("form").addClass("validation");   //css hack for disable visible inputs class valid:invalid
+            $(".hint-content.ex2").addClass("validation");   //css hack for disable visible inputs class valid:invalid
             $.each(model.get('content'), function (index, value) {
                 if ($.trim(value.get("name")).toLowerCase() !== value.get("answer")) { //check the retrived value of input, remove spaces, and use lower case method to match anwser
                     value.set("isValid", false);    //set up model value to show invalid answers

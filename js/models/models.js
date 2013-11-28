@@ -24,8 +24,6 @@ App.Ex2 = DS.Model.extend({
 });
 
 //my fixtures model data for each exercise
-//put all data to one fixture should solve problem with separated models
-//i need to check type value in handlebar each method and display data for each exercise according to type
 App.Ex1.FIXTURES = [
     {
         id: 1,
